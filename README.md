@@ -35,20 +35,19 @@ import uploadController from 'uploadController'
 
 class Upload extends Component {
 
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.files = [];
     this.onFilesChange = this.onFilesChange.bind(this);
     this.upload = this.upload.bind(this);
   }
 
-  onFilesChange(event) {
-  	const {signals} = this.props;
+  onFilesChange (event) {
   	let files = event.target.files;
     this.files = files;
   }
 
-  upload() {
+  upload () {
     uploadController(this.files, {
    	  url: '/upload',
       onProgress: () => {}, // make callback
@@ -56,7 +55,7 @@ class Upload extends Component {
     });    
   }
 
-  render() {
+  render () {
     return (
       <div>
           <h4>Please choose a file.</h4>
