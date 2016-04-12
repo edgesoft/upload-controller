@@ -61,7 +61,7 @@ class Upload extends Component {
           <h4>Please choose a file.</h4>
           <div>
             <input type={'file'} onChange={this.onFilesChange}/><br/><br/>
-            <button onClick={this.upload}>Upload</button>
+            <button disabled={this.files.length === 0} onClick={this.upload}>Upload</button>
           </div>
       </div>
     );
