@@ -1,7 +1,7 @@
 # upload-controller
 
-A simple upload controller to upload single files. Allow for uploads in React, Angular components
-to continue even if the component is unmounted.
+A simple upload controller to upload single files. Allow for uploads in React,
+Angular components to continue even if the component is unmounted.
 
 ## install
 
@@ -30,7 +30,7 @@ function onProgress ({percentComplete}) {
 
 ## server
 Fire up your express server. The example below is for formidable but you
-could use any multipart/upload server parser
+could use any multipart/upload server parser.
 
 ```js
 var express = require('express');
@@ -53,3 +53,8 @@ app.post( '/upload' , function(req, res ){
     form.parse(req);
 });
 ```
+
+## Next
+Anyone have need for multi upload? Add an issue. We need to discuss how to callbacks
+should be handled. Should we add support for additional parameters for the form
+upload. Please add an issue if you have questions or want some features.
