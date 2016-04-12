@@ -55,6 +55,6 @@ app.post( '/upload' , function(req, res ){
 ```
 
 ## Next
-Anyone have need for multi upload? Add an issue. We need to discuss how to callbacks
-should be handled. Should we add support for additional parameters for the form
-upload. Please add an issue if you have questions or want some features.
+Anyone have need for multi upload? Add an issue. We need to discuss how callbacks
+should be handled when having multiple files. Should we add support for additional parameters for the form
+upload? Please add an issue if you have questions or want some features.
