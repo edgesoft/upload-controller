@@ -28,6 +28,50 @@ function onProgress ({percentComplete}) {
 
 ```
 
+### simple React version
+```js
+import React, {Component} from 'react'
+import uploadController from 'uploadController'
+
+class Upload extends Component {
+
+  constructor(props) {
+    super(props);
+    this.files = [];
+    this.onFilesChange = this.onFilesChange.bind(this);
+    this.upload = this.upload.bind(this);
+  }
+
+  onFilesChange(event) {
+  	const {signals} = this.props;
+  	let files = event.target.files;
+    this.files = files;
+  }
+
+  upload() {
+    uploadController(this.files, {
+   	  url: '/upload',
+      onProgress: () => {}, // make callback
+      onEnd: () => {} // make callback
+    });    
+  }
+
+  render() {
+    return (
+      <div>
+          <h4>Please choose a file.</h4>
+          <div>
+            <input type={'file'} onChange={this.onFilesChange}/><br/><br/>
+            <button onClick={this.upload}>Upload</button>
+          </div>
+      </div>
+    );
+  }
+}
+
+export default Upload;
+```
+
 ## server
 Fire up your express server. The example below is for formidable but you
 could use any multipart/upload server parser.
