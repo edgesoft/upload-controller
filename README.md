@@ -27,3 +27,29 @@ function onProgress ({percentComplete}) {
 }
 
 ```
+
+## server
+Fire up your express server. The example below is for formidable but you
+could use any multipart/upload server parser
+
+```js
+var express = require('express');
+var app = express();
+var formidable = require('formidable');
+
+app.post( '/upload' , function(req, res ){
+     var form = new formidable.IncomingForm({
+     	uploadDir: '/some/dir/',
+        keepExtensions: true
+     });
+     form.on('progress', function(bytesReceived, bytesExpected) {
+        var percent_complete = (bytesReceived / bytesExpected) * 100;
+    });
+
+    form.on('end', function(fields, files) {
+        res.send({});
+    });
+
+    form.parse(req);
+});
+```
