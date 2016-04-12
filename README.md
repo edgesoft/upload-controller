@@ -1,7 +1,7 @@
 # upload-controller
 
-A simple upload controller to upload single files. Allow for uploads in React, Angular Components
-to continue even if the component if unmounted.
+A simple upload controller to upload single files. Allow for uploads in React, Angular components
+to continue even if the component is unmounted.
 
 ## install
 
