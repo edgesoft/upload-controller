@@ -8,13 +8,13 @@ A simple upload controller to upload single files
 import uploadController from 'upload-controller';
 
 uploadController(this.files, {
-	url: '/upload',
+  url: '/upload',
   onProgress: onProgress,
   onEnd: onEnd
 });
 
 function onEnd () {
-
+  console.log('The file is uploaded')
 }
 
 function onProgress ({percentComplete}) {
@@ -22,5 +22,3 @@ function onProgress ({percentComplete}) {
 }
 
 ```
-
-### Example React
