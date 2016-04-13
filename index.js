@@ -8,12 +8,19 @@ var uploadController = function (files, options) {
   if (files && files instanceof FileList) {
     var formData = new FormData()
     formData.append('file', files[0])
+    if (options.serverParams && Array.isArray(options.serverParams)) {
+      options.serverParams.forEach(function (param) {
+        if (param.key && param.value) {
+          formData.append(param.key, param.value)
+        }
+      })
+    }
     var xhr = new XMLHttpRequest()
 
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4 && xhr.status === 200) {
         if (options.onEnd) {
-          options.onEnd()
+          options.onEnd({callbackParams: options.callbackParams})
         }
       }
     }
@@ -23,7 +30,7 @@ var uploadController = function (files, options) {
     xhr.upload.onprogress = function (e) {
       if (options.onProgress) {
         var percentComplete = (e.loaded / e.total) * 100
-        options.onProgress({percentComplete: percentComplete.toFixed(0)})
+        options.onProgress({percentComplete: percentComplete.toFixed(0), callbackParams: options.callbackParams})
       }
     }
 
