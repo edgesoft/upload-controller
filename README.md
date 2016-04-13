@@ -10,10 +10,10 @@ npm install upload-controller
 ## Usage
 The files passed to the uploadController is an instance of FileList. You can choose
 to pass `onProgress`, `onEnd` if you want to track the file upload. `serverParams` is optional
-and will posted to the server along with the file. `callbackParams` is optional and
+and will posted to the server along with the file. The `serverParams` must be an array of key, value. `callbackParams` is optional and
 will be passed to onProgress and onEnd.
 
-- `onProgress`- object {percentComplete, callbackParams}  will be passed. callbackParams will contain undefined if not passed to uploadController
+- `onProgress`- object `{percentComplete, callbackParams}`  will be passed. `callbackParams` will contain undefined if not passed to uploadController
 - `onEnd` - same as onProgress except that percentComplete will not be in the callback
 
 
