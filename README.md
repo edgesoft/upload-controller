@@ -8,9 +8,9 @@ Angular components to continue even if the component is unmounted.
 npm install upload-controller
 
 ## Usage
-The files passed to the uploadController is an instance of FileList. You choose
-to pass onProgress, onEnd if you want to track the file upload. serverParams is optional
-as well and will posted to the server along with the file. callbackParams is optional and
+The files passed to the uploadController is an instance of FileList. You can choose
+to pass `onProgress`, `onEnd` if you want to track the file upload. `serverParams` is optional
+and will posted to the server along with the file. `callbackParams` is optional and
 will be passed to onProgress and onEnd.
 
 - `onProgress`- object {percentComplete, callbackParams}  will be passed. callbackParams will contain undefined if not passed to uploadController
