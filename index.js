@@ -1,7 +1,7 @@
 /*global FormData, XMLHttpRequest, FileList*/
-var UploadService = function (files, options) {
+var uploadController = function (files, options) {
   if (!options.url) {
-    console.warn('UploadService: options must contain url')
+    console.warn('upload-controller: options must contain url')
     return
   }
 
@@ -31,4 +31,4 @@ var UploadService = function (files, options) {
   }
 }
 
-module.exports = UploadService
+module.exports = uploadController

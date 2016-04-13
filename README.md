@@ -80,7 +80,7 @@ var express = require('express');
 var app = express();
 var formidable = require('formidable');
 
-app.post( '/upload' , function(req, res ){
+app.post( '/upload', function(req, res ) {
      var form = new formidable.IncomingForm({
      	uploadDir: '/some/dir/',
         keepExtensions: true
