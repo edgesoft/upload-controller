@@ -1,7 +1,7 @@
 {
   "name": "upload-controller",
   "description": "XHR upload",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "Mathias Nlsson",
   "license": "MIT",
   "bugs": {
@@ -11,6 +11,5 @@
     "type": "git",
     "url": "git://github.com/edgesoft/upload-controller.git"
   },
-  "scripts": {
-  }
+  "scripts": {}
 }
