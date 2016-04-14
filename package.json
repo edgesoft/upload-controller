@@ -4,6 +4,11 @@
   "version": "0.2.5",
   "author": "Mathias Nlsson",
   "license": "MIT",
+  "keywords": [
+    "upload",
+    "react",
+    "angular2"
+  ],
   "bugs": {
     "url": "https://github.com/edgesoft/upload-controller/issues"
   },

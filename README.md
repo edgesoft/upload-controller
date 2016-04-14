@@ -10,13 +10,13 @@ npm install upload-controller
 ## Usage
 The files passed to the uploadController is an instance of FileList. You can choose
 to pass `onProgress`, `onEnd` if you want to track the file upload. `query` is optional
-and will posted to the server along with the file. The `query` must be an array of key, value.
+and will be posted to the server along with the file. The `query` must be an array of key, value (see example below).
 
-You can also pass headers as an array for additional request headers.
+You can also pass headers as an array for additional request headers (see example below).
 
-- `onProgress`- object `{percentComplete}`  will be passed.
+- `onProgress`- object `{percentComplete}`  will be passed to the callback along with your additional parameters.
 - `onEnd` - same as onProgress except that percentComplete will not be in the callback. If the server responded with
-json you will have response on onEnd. If no response from server was made then response will be null.
+```json``` you will have a ```response``` object in `onEnd`. If no response from server was made then response object will be null.
 
 
 ```js
