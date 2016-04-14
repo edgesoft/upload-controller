@@ -9,11 +9,12 @@ npm install upload-controller
 
 ## Usage
 The files passed to the uploadController is an instance of FileList. You can choose
-to pass `onProgress`, `onEnd` if you want to track the file upload. `serverParams` is optional
-and will posted to the server along with the file. The `serverParams` must be an array of key, value. `callbackParams` is optional and
-will be passed to onProgress and onEnd.
+to pass `onProgress`, `onEnd` if you want to track the file upload. `query` is optional
+and will posted to the server along with the file. The `query` must be an array of key, value.
 
-- `onProgress`- object `{percentComplete, callbackParams}`  will be passed. `callbackParams` will contain undefined if not passed to uploadController
+You can also pass headers as an array for additional request headers.
+
+- `onProgress`- object `{percentComplete}`  will be passed.
 - `onEnd` - same as onProgress except that percentComplete will not be in the callback
 
 
@@ -23,16 +24,21 @@ import uploadController from 'upload-controller';
 uploadController(this.files, {
   url: '/upload',
   onProgress: onProgress,
-  onEnd: onEnd,
-  serverParams: [
+  onEnd() {
+     onEnd({path: path}) // you can pass additional data to your callback
+  },
+  query: [
     {
       key: 'param1',
       value: 'value1'
     }
   ],
-  callbackParams: {
-    // add whatever serializable data here
-  }
+  headers: [
+    {
+      key: 'someheader',
+      value: '....'
+    }
+  ]
 });
 
 function onEnd () {
@@ -69,15 +75,6 @@ class Upload extends Component {
    	  url: '/upload',
       onProgress: () => {}, // make callback
       onEnd: () => {} // make callback
-      serverParams: [
-        {
-          key: 'param1',
-          value: 'value1'
-        }
-      ],
-      callbackParams: {
-        // add whatever serializable data here
-      }
     });    
   }
 
