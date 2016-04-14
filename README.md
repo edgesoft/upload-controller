@@ -15,7 +15,8 @@ and will posted to the server along with the file. The `query` must be an array 
 You can also pass headers as an array for additional request headers.
 
 - `onProgress`- object `{percentComplete}`  will be passed.
-- `onEnd` - same as onProgress except that percentComplete will not be in the callback
+- `onEnd` - same as onProgress except that percentComplete will not be in the callback. If the server responded with
+json you will have response on onEnd. If no response from server was made then response will be null.
 
 
 ```js
