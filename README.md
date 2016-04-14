@@ -16,7 +16,7 @@ You can also pass headers as an array for additional request headers (see exampl
 
 - `onProgress`- object `{percentComplete}`  will be passed to the callback along with your additional parameters.
 - `onEnd` - same as onProgress except that percentComplete will not be in the callback. If the server responded with
-```json``` you will have a ```response``` object in `onEnd`. If no response from server was made then response object will be null.
+```js json ``` you will have a ```js response ``` object in `onEnd`. If no response from server was made then response object will be null.
 
 
 ```js
