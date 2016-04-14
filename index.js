@@ -20,7 +20,11 @@ var uploadController = function (files, options) {
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4 && xhr.status === 200) {
         if (options.onEnd) {
-          options.onEnd({callbackParams: options.callbackParams})
+            try {
+                options.onEnd(JSON.parse(xhr.response));
+            } catch (e) {
+                options.onEnd({callbackParams: options.callbackParams});
+            }
         }
       }
     }
