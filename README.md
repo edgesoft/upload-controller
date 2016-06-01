@@ -28,6 +28,7 @@ uploadController(this.files, {
   onEnd() {
      onEnd({path: path}) // you can pass additional data to your callback
   },
+  onError: onError,
   query: [
     {
       key: 'param1',
@@ -48,6 +49,10 @@ function onEnd () {
 
 function onProgress ({percentComplete}) {
   console.log(percentComplete);
+}
+
+function onError () {
+  
 }
 
 ```

@@ -1,7 +1,7 @@
 {
   "name": "upload-controller",
   "description": "XHR upload",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "author": "Mathias Nlsson",
   "license": "MIT",
   "keywords": [
